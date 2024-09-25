@@ -1,0 +1,177 @@
+// *** Analogue Clock SCSS *** //
+
+:root {
+  --off-white: #F5F5F8;
+  --cream: #ffffd1;
+  --off-black: #1C1C1E;
+  --watch-face-dark: #343436;
+  --body-bg: #424242;
+  --white: #fff;
+  --orange: #F2A23C;
+  --red: #CD0D0E;
+  --round-border: 50%;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui;
+}
+
+body {
+  background: var(--off-black);
+}
+
+h1 {
+  color: var(--white);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.clock-outer {
+  width: 270px;
+  height: 270px;
+  border: solid var(--cream) 9px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .clock-face {
+    border-radius: var(--round-border);
+    background: var(--white);
+    width: 250px;
+    height: 250px;
+    position: relative;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--off-black);
+
+    span {
+      position: absolute;
+      z-index: 10;
+    }
+
+    :nth-child(1) {
+      top: 26px;
+      right: 66px;
+    }
+
+    :nth-child(2) {
+      top: 62px;
+      right: 28px;
+    }
+
+    :nth-child(3) {
+      right: 14px;
+      top: 115px;
+    }
+    :nth-child(4) {
+      bottom: 62px;
+      right: 30px;
+    }
+
+    :nth-child(5) {
+      bottom: 26px;
+      right: 66px;
+    }
+    
+    :nth-child(6) {
+      bottom: 12px;
+      left: 121px;
+    }
+
+    :nth-child(7) {
+      bottom: 28px;
+      left: 70px;
+    }
+
+    :nth-child(8) {
+      bottom: 62px;
+      left: 30px;
+    }
+
+    :nth-child(9) {
+      left: 14px;
+      top: 115px;
+    }
+    :nth-child(10) {
+      top: 64px;
+      left: 28px;
+    }
+
+    :nth-child(11) {
+      top: 26px;
+      left: 62px;
+    }
+    
+    :nth-child(12) {
+      top: 12px;
+      left: 117px;
+    }
+
+    .hands {
+      position: absolute;
+      width: 50%;
+      right: 124px;
+      top: 125px;
+      height: 6px;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition-timing-function: cubic-bezier(0.1,2.7, 0.58, 1);
+    }
+
+    .hour-hand, .minute-hand {
+      background: var(--off-black);
+    }
+    .hour-hand {
+      z-index: 50;
+      width: 30%;
+      height: 3px;
+    }
+
+    .minute-hand {
+      z-index: 60;
+      width: 40%;
+      height: 3px;
+    }
+
+    .second-hand {
+      background: var(--red);
+      width: 45%;
+      height: 2px;
+      z-index: 70;
+    }
+
+    .centre, .inner, .core {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .centre {
+      top: 119px;
+      left: 119px;
+      width: 15px;
+      height: 15px;
+      background: var(--off-black);
+      z-index: 20;
+    }
+    .inner {
+      top:120px;
+      left: 120px;
+      width: 13px;
+      height: 13px;
+      background: var(--red);
+      z-index: 80;
+    }
+  }
+}
